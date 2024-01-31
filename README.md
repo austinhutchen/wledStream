@@ -1,5 +1,5 @@
 # WLEDStream for portable esp-based microsystems compiling and running instructions below
-<b>
+<h2><b>
 Navigate to the cloned repository on your local machine.
-</b> <br/>
+</b> </h2> <br/>
 -> <code> sudo bash start.sh </code>
