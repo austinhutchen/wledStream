@@ -2,4 +2,4 @@
 <b>
 Navigate to the cloned repository on your local machine.
 </b> <br/>
-<code> sudo bash start.sh </code>
+-> <code> sudo bash start.sh </code>
