@@ -1,4 +1,9 @@
 # FAST wifi LED stream for portable based microsystems compiling and running instructions below.
+<h1>TO START:</h1>
+<p><b>
+Navigate to the cloned repository on your local machine.
+</b> </p> <br/>
+-> $ <code> sudo bash start.sh </code>
 SUPPORTED:
 <ul>
   <Li>
@@ -13,7 +18,5 @@ SUPPORTED:
   </li>
 </ul>
 <hr/>
-<p><b>
-Navigate to the cloned repository on your local machine.
-</b> </p> <br/>
--> $ <code> sudo bash start.sh </code>
+
+
