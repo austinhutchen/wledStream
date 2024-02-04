@@ -3,7 +3,7 @@
 <p><b>
 Navigate to the cloned repository on your local machine.
 </b> </p> <br/>
--> $ <code> sudo bash start.sh </code>
+-> $ <code> sudo bash start.sh </code> <hr/>
 SUPPORTED:
 <ul>
   <Li>
