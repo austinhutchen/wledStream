@@ -23,8 +23,7 @@ FASTLED_NAMESPACE_BEGIN
 /// However, this is good enough for most cases, and almost certainly better
 /// than no power management at all.
 ///
-/// You're welcome to adjust these values as needed; there may eventually be an API
-/// for changing these on the fly, but it saves codespace and RAM to have them
+/// it saves codespace and RAM to have them
 /// be compile-time constants.
 /// @{
 static const uint8_t gRed_mW   = 16 * 5; ///< 16mA @ 5v = 80mW
