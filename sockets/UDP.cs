@@ -3,30 +3,48 @@ using System.Net;
 using System.Net.Sockets;
 using System.Text;
 
-class Program
+public class WLEDInterface
 {
-    static void Main(string[] args)
+    private readonly string ipAddress="192.168.1.0";
+    private readonly int port;
+
+    public WLEDInterface(string ipAddress, int port)
     {
-        // Define the IP address 
-        string ipAddress = "192.168.1.100"; 
-        int port = 21324; // Default UDP port for WLED
-        
-        // Create a UDP client
+        this.ipAddress = ipAddress;
+        this.port = port;
+    }
+
+    public void SetColor(byte red, byte green, byte blue)
+    {
+        string colorCommand = $"{{\"on\":true,\"seg\":[{{\"col\":[[{red},{green},{blue}]]}}]}}";
+        SendCommand(colorCommand);
+    }
+
+    public void SetBrightness(byte brightness)
+    {
+        string brightnessCommand = $"{{\"bri\":{brightness}}}";
+        SendCommand(brightnessCommand);
+    }
+
+    public void SetEffect(string effect)
+    {
+        string effectCommand = $"{{\"fx\":\"{effect}\"}}";
+        SendCommand(effectCommand);
+    }
+
+    private void SendCommand(string command)
+    {
         using (UdpClient udpClient = new UdpClient())
         {
             try
             {
-                // Encode the color command as a byte array
-                byte[] colorCommand = Encoding.ASCII.GetBytes("{\"on\":true,\"seg\":[{\"col\":[[255,0,0],[0,255,0],[0,0,255]]}]}");
-
-                // Send the UDP packet to the WLED ESP Device
-                udpClient.Send(colorCommand, colorCommand.Length, ipAddress, port);
-                
-                Console.WriteLine("Color command sent successfully to WLED device.");
+                byte[] commandBytes = Encoding.ASCII.GetBytes(command);
+                udpClient.Send(commandBytes, commandBytes.Length, ipAddress, port);
+                Console.WriteLine($"Command '{command}' sent successfully to WLED device.");
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"Error sending UDP packet: {ex.Message}");
+                Console.WriteLine($"Error sending command: {ex.Message}");
             }
         }
     }
