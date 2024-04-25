@@ -10,6 +10,6 @@ class Program
         // Example usage:
         wledInterface.SetColor(255, 0, 0); // Set color to red
         wledInterface.SetBrightness(150); // Set brightness to 150
-        wledInterface.SetEffect("Fire2012"); // Set effect to Fire2012
+        wledInterface.SetEffect("Fire2012"); // Set effect
     }
 }
